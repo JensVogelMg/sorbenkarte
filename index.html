@@ -13,73 +13,7 @@
 
 <body>
     <div id="mapid"></div>
-    <script>
-        //var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-        //var mymap = L.map('mapid').setView([51.4454, 14.3420], 11);
-        const mymap = L.map('mapid', {
-            center: [51.4454, 14.3420],
-            zoom: 11
-        })
-
-        const markStMichael = L.marker([51.1721733, 14.4676197]).addTo(mymap)
-            .bindPopup('<b> KiTa "St. Michael" </b><br /> OT Auritz <br>Obere Straße 15<br>02625 Bautzen<br>Tel. 03591 22655 ');
-
-        const markJanRadyserbWjela = L.marker([51.1767104, 14.4355499])
-            .addTo(mymap)
-            .bindPopup('<b>Sorbische Kindertagesstätte „Jan Radyserb-Wjela“</b><br /> Friedrich-Engels-Platz 8<br>02625 Bautzen <br> Tel.: 03591 47092 ');
-
-        const markKnLand = L.marker([51.1889009, 14.4438748])
-            .addTo(mymap)
-            .bindPopup('<p><strong>Kindertagesstätte „Knirpsenland“</strong><br>Fr.-J.-Curie-Straße 63<br>02625 Bautzen<br>Tel.: 03591 22184</p>');
-
-        const kiGas = L.layerGroup([markStMichael, markJanRadyserbWjela, markKnLand]).addTo(mymap);
-
-
-        const streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2hvc3RmYWNlNzYiLCJhIjoiY2thNGc2cXlnMGN1aTNtb2Fjc21xenB2dyJ9.6jqJkhklyriblBhXo-8_0A', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                '<a href = "https://creativecommons.org/licenses/by-sa/2.0/" > CC - BY - SA < /a>, Imagery © ' +
-                '<a href = "https://www.mapbox.com/" > Mapbox < /a>',
-            maxZoom: 20,
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1,
-            //accessToken: 'your.mapbox.access.token'
-        }).addTo(mymap);
-
-        const outdoor = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2hvc3RmYWNlNzYiLCJhIjoiY2thNGc2cXlnMGN1aTNtb2Fjc21xenB2dyJ9.6jqJkhklyriblBhXo-8_0A', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                '<a href="https://creativecommons.org/licenses/by-sa/2.0/"> CC - BY - SA < /a>, Imagery © ' +
-                ' <a href="https://www.mapbox.com/"> Mapbox < /a>',
-            maxZoom: 20,
-            id: 'mapbox/outdoors-v11',
-            tileSize: 512,
-            zoomOffset: -1,
-        }).addTo(mymap);
-
-        const sat = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2hvc3RmYWNlNzYiLCJhIjoiY2thNGc2cXlnMGN1aTNtb2Fjc21xenB2dyJ9.6jqJkhklyriblBhXo-8_0A', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                '<a href="https://creativecommons.org/licenses/by-sa/2.0/"> CC - BY - SA < /a>, Imagery © ' +
-                ' <a href="https://www.mapbox.com/"> Mapbox < /a>',
-            maxZoom: 20,
-            id: 'mapbox/satellite-streets-v11',
-            tileSize: 512,
-            zoomOffset: -1,
-        }).addTo(mymap);
-
-        const baseMaps = {
-            "Streets": streets,
-            "Outdoor": outdoor,
-            "Sattelite": sat
-        };
-
-        const overlayMaps = {
-            "Kindertagesstätten": kiGas
-        };
-
-
-
-        L.control.layers(baseMaps, overlayMaps).addTo(mymap);
-    </script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
