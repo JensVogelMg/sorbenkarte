@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="leaflet/leaflet.css">
+    <script src="leaflet/leaflet.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="mapid"></div>
+    <script>
+        //var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+        var mymap = L.map('mapid').setView([51.4454, 14.3420], 11);
+
+        const markerStMichael = L.marker([51.1721733, 14.4676197]).addTo(mymap)
+            .bindPopup('<b> KiTa "St. Michael" </b><br /> OT Auritz <br>Obere Straße 15<br>02625 Bautzen<br>Tel. 03591 22655 ');
+
+        const markerJanRadyserbWjela = L.marker([51.1767104, 14.4355499])
+            .addTo(mymap)
+            .bindPopup('<b>Sorbische Kindertagesstätte „Jan Radyserb-Wjela“</b><br /> Friedrich-Engels-Platz 8<br>02625 Bautzen <br> Tel.: 03591 47092 ');
+
+        const markerKnLand = L.marker([51.1889009, 14.4438748])
+            .addTo(mymap)
+            .bindPopup('<p><strong>Kindertagesstätte „Knirpsenland“</strong><br>Fr.-J.-Curie-Straße 63<br>02625 Bautzen<br>Tel.: 03591 22184</p>');
+
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2hvc3RmYWNlNzYiLCJhIjoiY2thNGc2cXlnMGN1aTNtb2Fjc21xenB2dyJ9.6jqJkhklyriblBhXo-8_0A', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href = "https://creativecommons.org/licenses/by-sa/2.0/" > CC - BY - SA < /a>, Imagery © ' +
+                '<a href = "https://www.mapbox.com/" > Mapbox < /a>',
+            maxZoom: 20,
+            id: 'mapbox/streets-v11',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            //accessToken: 'your.mapbox.access.token'
+        }).addTo(mymap);
+
+        //L.marker([51.5, -0.09]).addTo(mymap)
+        //    .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+    </script>
+</body>
+
+</html>
